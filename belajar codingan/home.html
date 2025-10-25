@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Sekolah - SMA/SD Contoh</title>
+  <meta name="description" content="Website resmi sekolah contoh: profil, guru, kegiatan, pendaftaran, galeri, kontak." />
+
+  <!-- Favicon (data URI minimal) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23296aab'/><text x='50' y='57' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>S</text></svg>">
+
+  <style>
+    /* ------- RESET & BASE ------- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.4;color:#1f2937}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* ------- LAYOUT ------- */
+    header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.85);backdrop-filter:blur(6px);box-shadow:0 2px 6px rgba(16,24,40,0.06)}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.75rem}
+    .brand .logo{width:44px;height:44px;border-radius:10px;background:#296aab;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .btn{background:#296aab;color:white;padding:.5rem .9rem;border-radius:8px;font-weight:600}
+    .ghost{padding:.45rem .8rem;border-radius:8px}
+
+    /* ------- HERO ------- */
+    .hero{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center;padding:2.2rem 0}
+    .hero-grid{display:flex;flex-direction:column;gap:1rem}
+    .hero h1{font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.05;color:#0f172a}
+    .hero p{color:#334155}
+    .hero-cta{display:flex;gap:.75rem}
+    .hero-illustration{border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(16,24,40,0.08)}
+
+    /* ------- SECTIONS ------- */
+    section{padding:2.2rem 0}
+    .card{background:white;border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+
+    /* ------- FEATURES / PROGRAMS ------- */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+
+    /* ------- TEACHERS ------- */
+    .teacher{display:flex;gap:1rem;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:10px;flex-shrink:0;background:#eef2ff;display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* ------- GALLERY ------- */
+    .masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+
+    /* ------- FORMS ------- */
+    input,textarea,select{width:100%;padding:.6rem .75rem;border-radius:8px;border:1px solid #e6edf3;background:white}
+
+    /* ------- FOOTER ------- */
+    footer{padding:1.8rem 0;background:#0f172a;color:#e6eef8}
+
+    /* ------- SMALL SCREENS ------- */
+    @media (max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr)}.grid-4{grid-template-columns:repeat(2,1fr)}.masonry{grid-template-columns:repeat(2,1fr)}.hero{padding:1rem 0}.hero-grid{order:2}.hero-illustration{order:1}}
+    @media (max-width:560px){.grid-3,.grid-4{grid-template-columns:1fr}.nav-links{display:none}.container{padding:0.8rem}}
+
+    /* ------- MICRO ANIMATIONS ------- */
+    .fade-up{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+    .fade-up.visible{opacity:1;transform:none}
+    .btn:active{transform:translateY(1px)}
+
+    /* simple table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:.6rem;border-bottom:1px solid #eef2f6;text-align:left}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">S</div>
+          <div>
+            <div style="font-weight:700">SMA/SD Contoh</div>
+            <div style="font-size:12px;color:#475569">Membangun karakter & prestasi</div>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Beranda</a>
+          <a href="#profil">Profil</a>
+          <a href="#guru">Guru</a>
+          <a href="#kegiatan">Kegiatan</a>
+          <a href="#pendaftaran">Pendaftaran</a>
+          <a href="#kontak">Kontak</a>
+          <a class="btn" href="#pendaftaran">Daftar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="home" class="hero">
+      <div class="hero-grid card fade-up">
+        <h1>Selamat datang di Website Resmi SMA/SD Contoh</h1>
+        <p>Kami berkomitmen membangun karakter, kompetensi akademik, dan keterampilan abad 21 melalui program pembelajaran terintegrasi, ekstra kurikuler aktif, serta lingkungan yang mendukung.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#pendaftaran">Pendaftaran Siswa Baru</a>
+          <a class="ghost" href="#profil">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+      <div class="hero-illustration card fade-up" style="margin-top:8px; padding:0; overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Ilustrasi Sekolah" style="height:260px; width:100%; object-fit:cover">
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="card fade-up">
+        <h2>Profil Sekolah</h2>
+        <p style="margin-top:.5rem">Nama Sekolah : SMA/SD Contoh<br>Alamat : Jl. Contoh No. 123, Kota Contoh<br>Akreditasi : A (contoh)<br>Jumlah Siswa : 650<br>Visi : Menghasilkan lulusan berkarakter, berdaya saing global.<br>Misi : 1) Meningkatkan kualitas pembelajaran; 2) Mengembangkan bakat dan minat siswa; 3) Memperkuat pendidikan karakter.</p>
+      </div>
+    </section>
+
+    <section id="program" class="fade-up">
+      <h2>Program unggulan</h2>
+      <div class="grid-3" style="margin-top:1rem">
+        <div class="card">
+          <h3>Penguatan Akademik</h3>
+          <p>Remedial & enrichment, bimbingan olimpiade, laboratorium lengkap.</p>
+        </div>
+        <div class="card">
+          <h3>Ekstrakurikuler</h3>
+          <p>Pramuka, basket, sepak bola, seni, robotik, dan klub bahasa.</p>
+        </div>
+        <div class="card">
+          <h3>Pembinaan Karakter</h3>
+          <p>Pembiasaan, mentoring konseling, program kepedulian sosial.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="guru">
+      <h2>Daftar Guru & Staf</h2>
+      <div style="margin-top:1rem" class="card">
+        <div class="grid-3">
+          <div class="teacher">
+            <div class="avatar">AR</div>
+            <div>
+              <div style="font-weight:700">Arif Santoso</div>
+              <div style="font-size:13px;color:#64748b">Kepala Sekolah</div>
+            </div>
+          </div>
+
+          <div class="teacher">
+            <div class="avatar">MN</div>
+            <div>
+              <div style="font-weight:700">Maya Nurhayati</div>
+              <div style="font-size:13px;color:#64748b">Guru Matematika</div>
+            </div>
+          </div>
+
+          <div class="teacher">
+            <div class="avatar">RS</div>
+            <div>
+              <div style="font-weight:700">Rudi Saputra</div>
+              <div style="font-size:13px;color:#64748b">Guru IPA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kegiatan">
+      <h2>Kegiatan Terbaru</h2>
+      <div class="card" style="margin-top:1rem">
+        <table>
+          <thead>
+            <tr><th>Tanggal</th><th>Acara</th><th>Tempat</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>10 Nov 2025</td><td>Pentas Seni Tahunan</td><td>Aula Sekolah</td></tr>
+            <tr><td>03 Des 2025</td><td>Lomba Matematika Antar SD</td><td>Lapangan Olahraga</td></tr>
+            <tr><td>18 Jan 2026</td><td>Study Tour</td><td>Bandung</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="galeri">
+      <h2>Galeri Foto</h2>
+      <div class="masonry" style="margin-top:1rem">
+        <img src="https://images.unsplash.com/photo-1581093588401-8b2d50b9d7b6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kegiatan1" class="card">
+        <img src="https://images.unsplash.com/photo-1523580494862-8e9f73b8f86c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kegiatan2" class="card">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kegiatan3" class="card">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kegiatan4" class="card">
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kegiatan5" class="card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="kegiatan6" class="card">
+      </div>
+    </section>
+
+    <section id="pendaftaran">
+      <h2>Pendaftaran Siswa Baru</h2>
+      <div class="card" style="margin-top:1rem;display:grid;grid-template-columns:1fr 360px;gap:1rem">
+        <div>
+          <form id="formDaftar">
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama" required placeholder="Nama siswa" />
+
+            <label style="margin-top:.6rem">Tanggal Lahir</label>
+            <input type="date" id="tgl" required />
+
+            <label style="margin-top:.6rem">Jenis Kelamin</label>
+            <select id="jk" required>
+              <option value="">Pilih</option>
+              <option value="L">Laki-laki</option>
+              <option value="P">Perempuan</option>
+            </select>
+
+            <label style="margin-top:.6rem">Alamat</label>
+            <textarea id="alamat" rows="3" required></textarea>
+
+            <label style="margin-top:.6rem">Email/wali</label>
+            <input type="email" id="email" placeholder="email@contoh.com" />
+
+            <div style="margin-top:1rem;display:flex;gap:.6rem">
+              <button class="btn" type="submit">Kirim Pendaftaran</button>
+              <button type="reset" class="ghost">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>Informasi Biaya & Kelengkapan</h3>
+            <p>- Biaya pendaftaran: Rp 100.000 (contoh)<br>- Persyaratan: fotokopi KK, akta, raport terakhir</p>
+            <p style="font-size:13px;color:#475569">Setelah mengirimkan form, pihak sekolah akan menghubungi wali melalui email atau telepon untuk proses selanjutnya.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak & Lokasi</h2>
+      <div class="card" style="margin-top:1rem;display:grid;grid-template-columns:1fr 360px;gap:1rem">
+        <div>
+          <p><strong>Alamat:</strong> Jl. Contoh No.123, Kota Contoh</p>
+          <p><strong>Telepon:</strong> (021) 1234-5678</p>
+          <p><strong>Email:</strong> info@sekolahcontoh.sch.id</p>
+
+          <h3>Pesan / Pertanyaan</h3>
+          <form id="formPesan">
+            <input type="text" id="namaPengirim" placeholder="Nama" required />
+            <input type="email" id="emailPengirim" placeholder="Email" required style="margin-top:.6rem" />
+            <textarea id="pesan" rows="4" placeholder="Tulis pesan..." style="margin-top:.6rem"></textarea>
+            <div style="margin-top:.6rem">
+              <button class="btn" type="submit">Kirim Pesan</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <div class="card" style="height:100%">
+            <h4>Peta Lokasi</h4>
+            <!-- Ganti src dengan URL embed google maps lokasi sekolah Anda -->
+            <iframe title="peta-sekolah" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126917.123456789!2d106.84513!3d-6.21462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQstC-0YDQv9C-0LvRjNC60LAg0KjQuNC90LrQuCwg0JrQvtC70YzRgtCw!5e0!3m2!1sid!2sid!4v1600000000000!5m2!1sid!2sid" width="100%" height="260" style="border:0;border-radius:8px" loading="lazy"></iframe>
+            <p style="font-size:12px;color:#475569;margin-top:.6rem">*Ganti embed map dengan lokasi sebenarnya (dapatkan dari Google Maps -> Share -> Embed map).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem">
+      <div>
+        <div style="font-weight:700">SMA/SD Contoh</div>
+        <div style="font-size:13px;color:#cbd5e1">© 2025 SMA/SD Contoh. Semua hak cipta dilindungi.</div>
+      </div>
+      <div style="font-size:13px;color:#94a3b8">Hubungi kami: info@sekolahcontoh.sch.id | (021) 1234-5678</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple scroll reveal for elements with class .fade-up
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); })
+    },{threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+    // Basic form handling (demo only) -> store to localStorage and show alert
+    document.getElementById('formDaftar').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = {
+        nama: this.nama.value || document.getElementById('nama').value,
+        tgl: this.tgl.value,
+        jk: this.jk.value,
+        alamat: this.alamat.value,
+        email: this.email.value
+      };
+      // Simulate sending: save to localStorage (replace with API call in real deployment)
+      const daftar = JSON.parse(localStorage.getItem('pendaftaran')||'[]');
+      daftar.push(data);
+      localStorage.setItem('pendaftaran', JSON.stringify(daftar));
+      alert('Pendaftaran dikirim. Pihak sekolah akan menghubungi Anda (demo).');
+      this.reset();
+    });
+
+    document.getElementById('formPesan').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Pesan terkirim. Terima kasih! (demo)');
+      this.reset();
+    });
+
+    // Mobile: simple nav toggle
+    // (When nav-links hidden by CSS at small screens, you can implement a toggle button)
+  </script>
+
+</body>
+</html>
